@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC >
+        <!--Hibernate/Hibernate Mapping DTD 3.0//EN"&ndash;&gt;-->
+        <!--"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">-->
+
+<hibernate-mapping>
+
+    <class name="entity.Teacher" table="teacher" catalog="dbproject">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" length="10"/>
+            <generator class="native" />
+        </id>
+
+        <property name="first_name" type="string">
+            <column name="first_name" length="20" not-null="true" unique="true" />
+        </property>
+
+        <property name="last_name" type="string">
+            <column name="last_name" length="50" not-null="true" unique="true" />
+        </property>
+
+    </class>
+
+</hibernate-mapping>

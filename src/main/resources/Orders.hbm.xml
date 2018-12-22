@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        <!--"-//Hibernate/Hibernate Mapping DTD 3.0//EN"-->
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="entity.Orders" table="orders" catalog="dbproject">
+        <id name="id_order" type="java.lang.Integer">
+            <column name="id_order" length="10"/>
+            <generator class="foreign">
+                <param name="property">student</param>
+            </generator>
+        </id>
+
+        <property name="nature" type="string">
+            <column name="nature" length="20" not-null="true" unique="true" />
+        </property>
+
+
+        <one-to-one name="student" constrained="true" class="entity.Student"/>
+    </class>
+
+</hibernate-mapping>
